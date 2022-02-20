@@ -1,9 +1,22 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-function StudentResult() {
-  return (
-    <div>studentResult</div>
-  )
+class StudentRow extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  render() {
+
+    return (
+    
+        
+    );
+  }
 }
 
-export default StudentResult
+StudentRow.propTypes = {
+  student: PropTypes.object.isRequired
+};
+
+export default StudentRow;
