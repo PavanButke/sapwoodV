@@ -112,11 +112,6 @@ class Students extends React.Component {
         <NewStudent addStudent={this.addStudent} />
         <StudentResult data={this.state.sortdata} sort={true} />
 
-        
-    
-
-   
-
       </div>
     );
   }
