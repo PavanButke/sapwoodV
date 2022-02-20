@@ -32,13 +32,14 @@ class StudentTable extends React.Component {
           student={student}
           rank={index}
           key={index}
-          sort={sort}
+          sort={index}
         />)
     })
 
     return (
-
-        <Table className='Table' size="small" aria-label="a dense table" >
+   
+        <Table  className='Table' size="small" aria-label="a dense table"  >
+          
           <TableHead>
             <TableRow>
               <TableCell >{sort ? 'Rank' : ''}</TableCell>
@@ -49,8 +50,9 @@ class StudentTable extends React.Component {
             </TableRow>
           </TableHead>
           <TableBody >{rows}</TableBody>
+        
         </Table>
-   
+    
     );
   }
 }

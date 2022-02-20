@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 
 
 import './App.css';
-import Student from './components/Student';
+import Students from './components/Students';
 
 
 class App extends Component {
   render() {
     return (
       <div className='App' >
-        <Student/>
-        
+        <Students/>
         </div>
     );
   }

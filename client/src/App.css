@@ -1,7 +1,9 @@
 .App{
   
   display: flex;
-  justify-content: center;
+  border: box;
+  justify-content:space-around;
+  align-items: center;
   margin-top: 2rem;
   
 }

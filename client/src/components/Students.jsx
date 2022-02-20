@@ -3,6 +3,9 @@ import React from 'react';
 import StudentResult from './StudentResult';
 import NewStudent from './NewStudent';
 import sortBy from "lodash/sortBy"
+import upload_sec from './Upload_sec';
+import "./Student.css"
+
 
 class Students extends React.Component {
   constructor(props) {
@@ -12,8 +15,8 @@ class Students extends React.Component {
         {
           "id": 1,
           "name": "Verne",
-          "marks3": 2,
-          "marks1": 34,
+          "marks1": 2,
+          "marks2": 34,
           "marks2": 34
         },
         {
@@ -38,9 +41,9 @@ class Students extends React.Component {
         {
           "id": 5,
           "name": "Emery",
-          "marks2": 40,
-          "marks1": 34,
-          "marks3": 34
+          "marks2": 90,
+          "marks1": 94,
+          "marks3": 94
         },
         {
           "id": 6,
@@ -71,7 +74,7 @@ class Students extends React.Component {
         }
       ]
       ,
-      sortdata: [ Math.max(this.data)]
+      sortdata: [  ]
       
     };
 
@@ -98,8 +101,10 @@ class Students extends React.Component {
   }
 
   sortStudents(){
-    let sortdata = sortBy(this.state.data, "marks1 , marks2 , marks3").reverse();
+    let sortdata = sortBy(this.state.data, "marks1" , "marks2",  "marks3").reverse();
     this.setState({sortdata})
+
+
   }
 
   componentDidMount() {
@@ -108,9 +113,17 @@ class Students extends React.Component {
 
   render() {
     return (
-      <div>
-        <NewStudent addStudent={this.addStudent} />
+      <div className='student'>
+        <h1>Add New Student Marks</h1>
+        <NewStudent  addStudent={this.addStudent} />
+        <br></br>
+        <h1>Data Sorted According to Insert</h1>
+        <StudentResult  data={this.state.data} sort={false} />
+        <br></br>
+        <h1>Data According to Marks</h1>
         <StudentResult data={this.state.sortdata} sort={true} />
+        <h1>Upload Data</h1>
+        <upload_sec addStudent={this.addStudent} />
 
       </div>
     );
