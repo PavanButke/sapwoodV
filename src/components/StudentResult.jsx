@@ -22,6 +22,8 @@ class StudentRow extends React.Component {
   }
 }
 
-
+StudentRow.propTypes = {
+  student: PropTypes.object.isRequired
+};
 
 export default StudentRow;
