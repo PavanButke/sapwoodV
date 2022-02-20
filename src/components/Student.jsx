@@ -1,6 +1,6 @@
 import React from 'react';
 
-import StudentTable from './StudentTable';
+import StudentResult from './StudentResult';
 import NewStudent from './NewStudent';
 import sortBy from "lodash/sortBy"
 
@@ -110,7 +110,8 @@ class Students extends React.Component {
     return (
       <div>
         <NewStudent addStudent={this.addStudent} />
-       
+        <StudentResult data={this.state.sortdata} sort={true} />
+
         
     
 
