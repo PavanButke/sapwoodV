@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/14852491/64910580-cc163700-d70f-11e9-99ec-8c49095a8c3b.png" />
+  <br/>
+  the simplest MERN (MongoDB, Express, React and Node) setup
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Why?
 
-## Available Scripts
+While there are many MERN starters on the interwebs already, I've struggled to find a 'minimal viable' MERN app. Existing examples usually involve other libraries and tools such as Redux, React Router, Typescript, Docker etc. These are all great things, but add unnecessary complexity when you just want to start simple.
 
-In the project directory, you can run:
+This MERN starter, `simple-mern` aims to be the minimum you need to get started with the stack.
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Development
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Install MongoDB and run on default port `27017`
+2. `npm install` in both root directory and `client` directory
+3. `npm start` in both root directory and `client` directory
+4. Head to [localhost:3000](http://localhost:3000) to see the 'My student' app
 
-### `npm test`
+### Production
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm install
+npm run build
+npm run start:prod
+```
 
-### `npm run build`
+The production app will be running at [localhost:5000](http://localhost:5000/).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Extend `simple-mern`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+While this boilerplate was designed to be as minimal as possible, support for other tech could be added _in their own branches_.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Current Extensions
 
-### `npm run eject`
+- [`with-axios`](https://github.com/jmsv/simple-mern/tree/with-axios): Replaces Axios with fetch - [@leonlafa](https://github.com/leonlafa)
+- [`with-react-router`](https://github.com/jmsv/simple-mern/tree/with-react-router): Adds React Router - [@leonlafa](https://github.com/leonlafa)
+- [`with-material-ui`](https://github.com/jmsv/simple-mern/tree/with-material-ui): Adds Material UI - [@leonlafa](https://github.com/leonlafa)
+- [`with-docker`](https://github.com/jmsv/simple-mern/tree/with-docker): Adds Docker & Docker Compose - [@alejandrotoga02](https://github.com/alejandrotoga02)
+- [`with-redux`](https://github.com/jmsv/simple-mern/tree/with-redux): Adds Redux for state management - [@rahulSinha-01](https://github.com/rahulSinha-01)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Ideas for Future Extensions
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Replace JavaScript with TypeScript
+- Multi-user setup with social auth (e.g. Google, Facebook etc. login using Passport)
+- [Redux](https://redux.js.org) or [MobX](https://mobx.js.org) global state management for student
+- Static site generator using [GatsbyJS](https://www.gatsbyjs.org/) or [Next.js](https://nextjs.org/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you'd like to add support for any of the above or something else, please open an [issue](https://github.com/jmsv/simple-mern/issues) letting me know, and I'll create a new branch to base the PR against.
