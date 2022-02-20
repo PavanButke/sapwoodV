@@ -4,7 +4,7 @@ import StudentTable from './StudentTable';
 import NewStudent from './NewStudent';
 import sortBy from "lodash/sortBy"
 
-class Student extends React.Component {
+class Students extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -71,18 +71,22 @@ class Student extends React.Component {
         }
       ]
       ,
-      sortdata: [ ]
+      sortdata: [ Math.max(this.data)]
       
     };
 
    
 
-    this.fetchStudent = this.fetchStudent.bind(this);
+    this.fetchStudents = this.fetchStudents.bind(this);
     this.addStudent = this.addStudent.bind(this);
-    this.sortStudent = this.sortStudent.bind(this);
+    this.sortStudents = this.sortStudents.bind(this);
   }
 
- 
+  fetchStudents(){
+    fetch("https://my.api.mockaroo.com/students.json?key=5dde5e00")
+    .then(result=>result.json())
+    .then(items=>this.setState({data: items}))
+  }
   
   addStudent(name, marks1 , marks2 , marks3){
     let student = {name, marks1 , marks2 , marks3}
@@ -90,28 +94,33 @@ class Student extends React.Component {
 
     this.setState({
       data: [...this.state.data, student]
-    },() => this.sortStudent());
+    },() => this.sortStudents());
   }
 
-  sortStudent(){
+  sortStudents(){
     let sortdata = sortBy(this.state.data, "marks1 , marks2 , marks3").reverse();
     this.setState({sortdata})
   }
 
   componentDidMount() {
-    this.sortStudent();
+    this.sortStudents();
   }
 
   render() {
     return (
       <div>
         <NewStudent addStudent={this.addStudent} />
+       
+        
+    
+
+   
 
       </div>
     );
   }
 }
 
-Student.propTypes = {};
+Students.propTypes = {};
 
-export default Student;
+export default Students;
