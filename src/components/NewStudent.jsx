@@ -19,7 +19,7 @@ class StudentForm extends React.Component {
   }
 
   handleMarks1Change(e) {
-    this.setState({marks1: e.target.val});
+    this.setState({marks1: e.target.value});
     
   }
   
